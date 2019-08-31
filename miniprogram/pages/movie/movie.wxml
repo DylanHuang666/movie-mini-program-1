@@ -1,0 +1,15 @@
+<!--pages/movie/movie.wxml-->
+<view class="movie" bindtap="gotoComment" wx:for="{{movieList}}" wx:key="{{index}}" data-movieid="{{item.id}}">
+  <image class="movie-img" src="{{item.images.small}}"></image>
+  <view class="movie-info">
+    <view class="movie-title">{{item.title}}</view>
+    <view class="movie-average">评分：
+      <text>{{item.rating.average}}分</text>
+    </view>
+    <view>主演：
+      <text class="act" wx:for="{{item.casts}}" wx:key="{{index}}">{{item.name}} </text>
+    </view>
+    <view>年份：{{item.year}}</view>
+  </view>
+  <button class="movie-comment" type="warn" size="mini">详情</button>
+</view>

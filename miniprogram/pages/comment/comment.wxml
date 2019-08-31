@@ -1,0 +1,29 @@
+<!--pages/comment/comment.wxml-->
+<view class="detail">
+  <view class="detail-container" style="background: url({{detail.images.large}}) no-repeat top/cover"></view>
+  <view class="box"></view>
+  <view class="wrapper" >
+    <image class="img" src="{{detail.images.small}}"></image>
+    <view class="movie-info">
+      <view class="movie-title">{{detail.title}}</view>
+      <view class="movie-average">评分：<text>{{detail.rating.average}}分</text></view>
+      <view class="tags">{{detail.tags[0]}}/{{detail.tags[1]}}</view>
+      <view class="director">导演：{{detail.writers[0].name}}</view>
+      <view class="year">年份：{{detail.year}}</view>
+    </view>
+  </view>
+  <view class="about">简介：</view>
+  <view class="summary">{{detail.summary}}</view>
+  <van-field
+    value="{{ content }}"
+    placeholder="写一些评价吧"
+    border="{{ false }}"
+    bind:change="onContentChange"
+  />
+  <van-rate value="{{ star }}" bind:change="onStarChange" />
+  <van-button type="warning" bindtap="uploadImg">上传图片</van-button>
+  <view class="img-box">
+    <image class="comment-img" src="{{item}}" wx:for="{{images}}" wx:key="{{index}}"></image>
+  </view>
+  <van-button type="danger" size="large" bindtap="submit" >提交</van-button>
+</view>

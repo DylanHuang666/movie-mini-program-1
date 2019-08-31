@@ -1,0 +1,19 @@
+/* pages/profile/profile.wxss */
+.box{
+  background-color: #e54847;
+  text-align: center;
+  height: 450rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-img{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+.name{
+  color: white;
+}
